@@ -1,0 +1,27 @@
+# Windows/Linux Machine Users --------------------
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "generic/ubuntu2010"
+  config.vm.network "private_network", ip: "192.168.56.10"
+  config.hostsupdater.aliases = ["python.adventure"]
+  config.vm.provider "virtualbox" do |vb|
+    config.vm.synced_folder "app/", "/home/vagrant/app/"
+  end
+  config.vm.provision "shell", path: "env/script.sh"
+end
+
+# M1 Machine Users ----------------------
+
+# Vagrant.configure("2") do |config|
+#   config.vm.box = "spox/ubuntu-arm"
+#   config.vm.network "private_network", ip: "192.168.56.10"
+#   config.vm.provider "vmware_fusion" do |vb|
+#     config.vm.synced_folder "app/", "/home/vagrant/app/"
+#   end
+#   nodeapp.vm.provision "shell", inline: <<-SHELL
+#       systemctl disable apt-daily.service
+#       systemctl disable apt-daily.timer
+#       sudo apt remove unattended-upgrades -y
+#     SHELL
+#   config.vm.provision "shell", path: "env/script.sh"
+# end

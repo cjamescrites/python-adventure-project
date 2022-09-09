@@ -1,7 +1,15 @@
 import time
 import logging
 
-logging.basicConfig(filename='playerchoices.log', encoding='utf-8', level=logging.DEBUG)
+# For Python 3.9 or newer
+# logging.basicConfig(filename='playerchoices.log', encoding='utf-8', level=logging.DEBUG)
+
+# For Python3.8 or older
+root_logger= logging.getLogger()
+root_logger.setLevel(logging.DEBUG)
+handler = logging.FileHandler('playerchoices.log', 'w', 'utf-8')
+handler.setFormatter(logging.Formatter('%(name)s %(message)s'))
+root_logger.addHandler(handler)
 
 class Character:
     def __init__(self, letter, type, primary_weapon, secondary_weapon):
@@ -38,20 +46,20 @@ time.sleep(2)
 print(".:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.:|:.")
 print(" ")
 def character_selection():
-    choice = int(input("                                  Select a character by number... "))
+    choice = input("                                  Select a character by number... ")
     choosing = True
     logging.info('Player is prompted for character selection')
     while choosing == True:
-        if choice == 1:
+        if choice == "1":
             global character
             character = "Archer"
             logging.info('Player has chosen Archer character')
             choosing = False
-        elif choice == 2:
+        elif choice == "2":
             character = "Bard"
             logging.info('Player has chosen Bard character')
             choosing = False
-        elif choice == 3:
+        elif choice == "3":
             character = "Swordsman"
             logging.info('Player has chosen Swordsman character')
             choosing = False
