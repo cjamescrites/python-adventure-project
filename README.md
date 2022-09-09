@@ -30,7 +30,9 @@ You will need the following programs installed in order to utilize this repo.
     In the app folder, comment out line 5, and make sure lines 8-12 are not commented out.
     If python version is 3.9 or newer...
     In the app folder, comment out lines 8-12, and make sure line 5 is not commented out.
-6) Enter vagrant ssh into the terminal to begin the game
+6) Enter vagrant ssh into the terminal
+7) Enter cd app into the terminal
+8) Enter python3 adventure.py to begin the game
 
 # M1 CHIP USERS:
 1) Clone Repo into your IDE
@@ -41,5 +43,7 @@ You will need the following programs installed in order to utilize this repo.
     In the app folder, comment out line 5, and make sure lines 8-12 are not commented out.
     If python version is 3.9 or newer...
     In the app folder, comment out lines 8-12, and make sure line 5 is not commented out.
-6) Enter vagrant ssh into the terminal to begin the game.
+6) Enter vagrant ssh into the terminal
+7) Enter cd app into the terminal
+8) Enter python3 adventure.py to begin the game
 
